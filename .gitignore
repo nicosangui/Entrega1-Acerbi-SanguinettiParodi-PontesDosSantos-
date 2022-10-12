@@ -1,0 +1,5 @@
+venv
+info.txt
+__pycache__
+media
+db.sqlite3
