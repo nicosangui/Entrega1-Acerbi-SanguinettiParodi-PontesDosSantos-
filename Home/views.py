@@ -3,7 +3,7 @@ from Home.models import Jugador
 from Home.forms import JugadorFormulario
 
 def index(request):
-   return render(request, 'home/index.html') 
+   return render(request, 'Home/index.html') 
    
 def ver_jugadores(request):
     

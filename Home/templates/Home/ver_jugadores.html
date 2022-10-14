@@ -5,12 +5,8 @@
 <title>Ver jugadores</title>
 {% endblock title_pagina %}
 
-{% block h1_texto_header %}
-Ver jugadores
-{% endblock h1_texto_header %}
 
-{% block index_contenido %}
-<a class="navbar-brand" href={% url 'crear_jugador' %}>Crear jugador</a>
+{% block mi_contenido %}
 <p>Listado de jugadores:</p>
 
 <form action={% url 'ver_jugadores' %} method="GET">
@@ -18,9 +14,9 @@ Ver jugadores
     <button>Buscar</button>
 </form>
 <p>
-    {% if jugadores %}
+    {% if jugador %}
 
-        {% for jugador in jugadores %}
+        {% for jugador in jugador %}
             <li>{{jugador.nombre}} {{jugador.apellido}} {{jugador.edad}}</li>
         {% endfor %}
 
@@ -29,5 +25,5 @@ Ver jugadores
     {% endif %}
 
 </p>
-{% endblock index_contenido %}
+{% endblock mi_contenido %}
 
