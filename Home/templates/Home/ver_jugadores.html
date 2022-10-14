@@ -8,16 +8,18 @@
 
 {% block mi_contenido %}
 <p>Listado de jugadores:</p>
-
+   
 <form action={% url 'ver_jugadores' %} method="GET">
-    {{formulario}}
-    <button>Buscar</button>
-</form>
+    <div id= "custom-search-input" >
+        <input type='text' class='form-control' placeholder= 'Nombre y apellido...' name='buscar' 
+    </div>
+        <input type= 'submit' value= 'Buscar'>
+    </form>
 <p>
     {% if jugador %}
 
-        {% for jugador in jugador %}
-            <li>{{jugador.nombre}} {{jugador.apellido}} {{jugador.edad}}</li>
+        {% for jugadores in jugador %}
+            <li>{{jugadores.nombre}} {{jugadores.apellido}} {{jugadores.edad}}</li>
         {% endfor %}
 
     {% else %}
