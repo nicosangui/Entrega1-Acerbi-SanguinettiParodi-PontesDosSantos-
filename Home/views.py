@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from Home.models import Jugador
 from Home.forms import Busquedajugador, JugadorFormulario
 
@@ -7,17 +7,19 @@ def index(request):
    
 def ver_jugadores(request):
     
-    jugador = Jugador.objects.all()
+    apellido =  request.GET.get('apellido')
     
-    return render(request, 'Home/ver_jugadores.html', {'jugador': jugador})
+    if apellido:
+        jugadores = Jugador.objects.filter(apellido__icontains=apellido)
+    else:
+        jugadores = Jugador.objects.all()
+    
+    formulario = Busquedajugador()
+    
+    return render(request, 'Home/ver_jugadores.html', {'jugadores': jugadores, 'formulario':formulario})
     
     
-def busqueda_jugador(request):
-    
-    busqueda = Busquedajugador()
-    
-    return render(request, 'Home/crear_jugador.html', {'busqueda': busqueda})  
-        
+
 def crear_jugador(request):
     if request.method == 'POST':
         
