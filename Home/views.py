@@ -42,7 +42,7 @@ def crear_jugador(request):
             jugador.save()
             
             return redirect('ver_jugadores') 
-               
+         
     formulario = JugadorFormulario()
-    
+        
     return render(request, 'Home/crear_jugador.html', {'formulario': formulario})
