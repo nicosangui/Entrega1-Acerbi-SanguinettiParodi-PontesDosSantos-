@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from Home.models import Jugador
 from Home.forms import Busquedajugador, JugadorFormulario
 
+
 def index(request):
    return render(request, 'Home/index.html') 
+
+
    
 def ver_jugadores(request):
     

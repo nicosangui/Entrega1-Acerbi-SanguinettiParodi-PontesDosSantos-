@@ -5,8 +5,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
+        <meta name="author" content="" />
         {% block title_pagina %}
-        <title>Base</title>
+        <title>Inicio</title>
         {% endblock title_pagina %}
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -17,9 +18,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href={% static 'css/styles.css' %} rel="stylesheet" />
     </head>
+
     <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
+          <!-- Navigation-->
+          <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href={% url 'index' %}>Inicio</a>
                 <a class="navbar-brand" href={% url 'ver_jugadores' %}>Ver jugadores</a>
@@ -28,10 +30,10 @@
         </nav>
 
         <div class="container">
-        {% block mi_contenido %}
+        {% block mi_contenido  %}
         
         {% endblock mi_contenido %}
-        </div>
+        </nav>
 
         <!-- Footer-->
         <footer class="footer bg-light">
@@ -74,5 +76,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
     </body>
-</html>
+</html>    
