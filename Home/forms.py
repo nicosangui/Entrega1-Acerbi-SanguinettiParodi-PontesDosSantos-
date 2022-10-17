@@ -5,7 +5,7 @@ class JugadorFormulario(forms.Form):
     apellido = forms.CharField(max_length=20)
     nacionalidad = forms.CharField(max_length=20)
     lugar_de_nacimiento = forms.CharField(max_length=20)
-    fecha_de_nacimiento = forms.DateField()
+    fecha_de_nacimiento = forms.DateField(help_text='MM/DD/AAAA') 
     edad = forms.IntegerField()
     equipo_actual = forms.CharField(max_length=20)
     posicion = forms.CharField(max_length=20)

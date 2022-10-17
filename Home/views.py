@@ -10,7 +10,7 @@ def index(request):
    
 def ver_jugadores(request):
     
-    apellido =  request.GET.get('apellido')
+    apellido =  request.GET.get('apellido', None)
     
     if apellido:
         jugadores = Jugador.objects.filter(apellido__icontains=apellido)
@@ -30,18 +30,17 @@ def crear_jugador(request):
         
         if formulario.is_valid():
             data = formulario.cleaned_data    
-            nombre = data['nombre']
-            apellido = data['apellido']
-            nacionalidad = data['nacionalidad']
-            lugar_de_nacimiento = data['lugar_de_nacimiento']
-            fecha_de_nacimiento = data['fecha_de_nacimiento']
-            edad = data['edad']
-            equipo_actual = data['equipo_actual']
-            posicion = data['posicion']
-            altura = data['altura']
-            peso = data['peso']
-            
-            jugador = Jugador(nombre=nombre, apellido=apellido, nacionalidad=nacionalidad, lugar_de_nacimiento=lugar_de_nacimiento, fecha_de_nacimiento=fecha_de_nacimiento, edad=edad, equipo_actual=equipo_actual,posicion=posicion, altura=altura, peso=peso)
+            jugador = Jugador(nombre= data['nombre'],
+                              apellido= data['apellido'],
+                              nacionalidad=data['nacionalidad'],
+                              lugar_de_nacimiento= data['lugar_de_nacimiento'],
+                              fecha_de_nacimiento= data['fecha_de_nacimiento'],
+                              edad= data['edad'],
+                              equipo_actual= data['equipo_actual'],
+                              posicion= data['posicion'],
+                              altura= data['altura'],
+                              peso= data['peso']
+            )
             jugador.save()
             
             return redirect('ver_jugadores') 

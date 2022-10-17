@@ -8,7 +8,7 @@ class Jugador(models.Model):
     apellido = models.CharField(max_length=20)
     nacionalidad = models.CharField(max_length=20)
     lugar_de_nacimiento = models.CharField(max_length=20)
-    fecha_de_nacimiento = models.DateField()
+    fecha_de_nacimiento = models.DateField(help_text='MM/DD/AAAA')
     edad = models.IntegerField()
     equipo_actual = models.CharField(max_length=20)
     posicion = models.CharField(max_length=20)
