@@ -51,3 +51,8 @@ def crear_jugador(request):
     formulario = JugadorFormulario()
         
     return render(request, 'Home/crear_jugador.html', {'formulario': formulario})
+
+
+
+def sobre_nosotros(request):
+   return render(request, 'Home/sobre_nosotros.html')
