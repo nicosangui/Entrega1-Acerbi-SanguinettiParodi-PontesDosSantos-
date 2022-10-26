@@ -1,0 +1,16 @@
+{% extends 'padres/base.html' %}
+
+{% block title_pagina %}
+<title>Eliminar Jugador</title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}
+<form action={% url 'eliminar_jugador' jugador.id %} method="POST">
+    {% csrf_token %}
+    <p>
+        Confirma el borrador del jugador:  {{jugador}}?
+    </p>
+    <button>Confirmar</button>
+</form>
+{% endblock mi_contenido %}

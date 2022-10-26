@@ -20,14 +20,9 @@
         {% for jugador in jugadores %}
             <li>{{jugador.nombre}} 
                 {{jugador.apellido}}, 
-                {{jugador.nacionalidad}}, 
-                {{jugador.lugar_de_nacimiento}}, 
-                {{jugador.fecha_de_nacimiento}}, 
-                Edad: {{jugador.edad}}, 
-                Equipo: {{jugador.equipo_actual}}, 
-                Pos.: {{jugador.posicion}}, 
-                Altura: {{jugador.altura}}mts, 
-                Peso: {{jugador.peso}}kg</li>
+                {{jugador.nacionalidad}}
+                <p><a href={% url 'ver_jugador' jugador.id %}>{{jugador}}</a></p>
+            </li>
         {% endfor %}
 
     {% else %}

@@ -14,3 +14,5 @@ class Jugador(models.Model):
     posicion = models.CharField(max_length=20)
     altura = models.DecimalField(decimal_places=2, max_digits=3)
     peso = models.DecimalField(decimal_places=2, max_digits=5)
+    
+   

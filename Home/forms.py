@@ -11,6 +11,7 @@ class JugadorFormulario(forms.Form):
     posicion = forms.CharField(max_length=20)
     altura = forms.DecimalField(decimal_places=2, max_digits=3)
     peso = forms.DecimalField(decimal_places=2, max_digits=5)
+    
 
 class Busquedajugador(forms.Form):
     apellido = forms.CharField(max_length=20)

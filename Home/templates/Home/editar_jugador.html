@@ -1,0 +1,17 @@
+{% extends 'padres/base.html' %}
+
+{% block title_pagina %}
+<title>Editar Jugador</title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}
+<form action={% url 'editar_jugador' jugador.id %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{form}}
+    </table>
+    <button>Editar</button>
+</form>
+{% endblock mi_contenido %}

@@ -1,0 +1,27 @@
+{% extends 'padres/base.html' %}
+
+
+{% block title_pagina %}
+<title>Jugador: </title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}
+
+<p> 
+            <li>{{jugador.nombre}}</li>
+            <li>{{jugador.apellido}}</li>
+            <li>{{jugador.nacionalidad}}</li>
+            <li>{{jugador.lugar_de_nacimiento}}</li>
+            <li>{{jugador.fecha_de_nacimiento}}</li> 
+            <li>Edad: {{jugador.edad}}</li>
+            <li>Equipo: {{jugador.equipo_actual}}</li> 
+            <li>Pos.: {{jugador.posicion}}</li>
+            <li>Altura: {{jugador.altura}}mts</li> 
+            <li>Peso: {{jugador.peso}}kg</li>
+            <li><a href={% url 'editar_jugador' jugador.id %}>Editar</a></li>
+            <li><a href={% url 'eliminar_jugador' jugador.id %}>Eliminar</a></li>
+        
+</p>
+{% endblock mi_contenido %}
+
