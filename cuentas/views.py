@@ -35,7 +35,7 @@ def registrar(request):
 
 @login_required
 def perfil(request):
-    return render(request, 'accounts/perfil.html', {})
+    return render(request, 'cuentas/perfil.html', {})
 
 @login_required
 def editar_perfil(request):
@@ -65,10 +65,10 @@ def editar_perfil(request):
                 'avatar': user.extensionusuario.avatar,
             }
         )
-    return render(request, 'accounts/editar_perfil.html', {'formulario': formulario})
+    return render(request, 'cuentas/editar_perfil.html', {'formulario': formulario})
 
 
 class CambiarContraseña(LoginRequiredMixin, PasswordChangeView):
-    template_name = 'accounts/cambiar_contraseña.html'
-    success_url = '/accounts/perfil/'
+    template_name = 'cuentas/cambiar_contraseña.html'
+    success_url = '/cuentas/perfil/'
     form_class = MiCambioDePassword

@@ -4,6 +4,7 @@ from Home.forms import Busquedajugador, JugadorFormulario
 from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -25,7 +26,7 @@ def ver_jugadores(request):
     return render(request, 'Home/ver_jugadores.html', {'jugadores': jugadores, 'formulario':formulario})
     
     
-
+@login_required
 def crear_jugador(request):
     if request.method == 'POST':
         

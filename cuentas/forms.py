@@ -22,9 +22,9 @@ class EditarPerfilFormulario(forms.Form):
     
 
 class MiCambioDePassword(PasswordChangeForm):
-    old_password = forms.CharField(label='Contrasenia vieja', widget=forms.PasswordInput) 
-    new_password1 = forms.CharField(label='Contrasenia nueva', widget=forms.PasswordInput)
-    new_password2 = forms.CharField(label='Repetir Contrasenia nueva', widget=forms.PasswordInput)
+    old_password = forms.CharField(label='Contraseña vieja', widget=forms.PasswordInput) 
+    new_password1 = forms.CharField(label='Contraseña nueva', widget=forms.PasswordInput)
+    new_password2 = forms.CharField(label='Repetir Contraseña nueva', widget=forms.PasswordInput)
     
     class Meta:
         model = User
