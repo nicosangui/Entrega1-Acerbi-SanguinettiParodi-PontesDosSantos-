@@ -7,7 +7,7 @@
 
 
 {% block mi_contenido %}
-<p>Listado de jugadores:</p>
+<h1>Listado de jugadores:</h1>
 
 <form action={% url 'ver_jugadores' %} method="GET">
     {{formulario}}
@@ -18,11 +18,8 @@
     {% if jugadores %}
  
         {% for jugador in jugadores %}
-            <li>{{jugador.nombre}} 
-                {{jugador.apellido}}, 
-                {{jugador.nacionalidad}}
-                <p><a href={% url 'ver_jugador' jugador.id %}>{{jugador}}</a></p>
-            </li>
+        <p><a href={% url 'ver_jugador' jugador.id %}>{{jugador.nombre}} {{jugador.apellido}}, {{jugador.nacionalidad}}</a></p>
+           
         {% endfor %}
 
     {% else %}

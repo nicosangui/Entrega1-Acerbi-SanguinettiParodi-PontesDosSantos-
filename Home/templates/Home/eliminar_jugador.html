@@ -9,7 +9,7 @@
 <form action={% url 'eliminar_jugador' jugador.id %} method="POST">
     {% csrf_token %}
     <p>
-        Confirma el borrador del jugador:  {{jugador}}?
+        ¿Confirma el borrador del jugador:  {{jugador.nombre}} {{jugador.apellido}}?
     </p>
     <button>Confirmar</button>
 </form>
