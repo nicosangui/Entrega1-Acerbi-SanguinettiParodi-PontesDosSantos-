@@ -1,0 +1,42 @@
+{% extends 'padres/base.html' %}
+
+{% block title_pagina %}
+<title>Mensajes</title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}
+<h1>Mensajes: </h1>
+
+<form action={% url 'ver_mensajes' %} method="GET">
+    {{formulario}}
+    <button> Buscar </button>    
+</form>
+   
+<p> 
+    {% if mensajes %}
+ 
+        {% for mensaje in mensajes %}
+            <p>{{mensaje.nombre}} 
+                {{mensaje.apellido}}.                                 
+            Fecha de creación: {{mensaje.fecha_de_creacion}}
+            <p><span span style="border-image: initial; border: 3px solid black">{{mensaje.chat}}</span>
+
+           <p><a href={% url 'responder_mensaje' mensaje.id %}>Responder</a></p>
+            
+</p>
+        {% endfor %}
+
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+    
+
+<form action="escribir/">
+<input type="submit" value="Nuevo mensaje" />
+</form>
+    
+    
+</p>
+{% endblock mi_contenido %}
+

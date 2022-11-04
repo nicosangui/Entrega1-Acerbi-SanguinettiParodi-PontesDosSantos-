@@ -1,0 +1,25 @@
+{% extends 'padres/base.html' %}
+
+{% block title_pagina %}
+<title>Responder mensaje</title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}
+<p>Mensaje: </p>
+   <p>
+        {{mensaje.nombre}} 
+        {{mensaje.apellido}}.                                 
+        Fecha de creación: {{mensaje.fecha_de_creacion}}
+        <p><span span style="border-image: initial; border: 1px solid blue">{{mensaje.chat}}</span>
+        
+    {% comment %} <form action={% url 'responder_mensaje' mensaje.id %} method="POST">
+            {% csrf_token %}
+            <table>
+                {{form.media}}
+                {{form}}
+            </table>
+            <button>Editar</button> 
+    </form>        
+    </p> {% endcomment %}
+{% endblock mi_contenido %}
