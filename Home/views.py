@@ -67,7 +67,7 @@ class VerJugador(DetailView):
     
 class Editarjugador(LoginRequiredMixin, UpdateView):
     model = Jugador
-    success_url = '/Home/jugadores/'
+    success_url = '/jugadores/'
     template_name = 'Home/editar_jugador.html'
     fields = ['nombre',
               'apellido',
@@ -83,5 +83,5 @@ class Editarjugador(LoginRequiredMixin, UpdateView):
     
 class EliminarJugador(LoginRequiredMixin, DeleteView):
     model = Jugador
-    success_url = '/Home/jugador/'
+    success_url = '/jugador/'
     template_name = 'Home/eliminar_jugador.html'

@@ -21,9 +21,12 @@
                 {{mensaje.apellido}}.                                 
             Fecha de creación: {{mensaje.fecha_de_creacion}}
             <p><span span style="border-image: initial; border: 3px solid black">{{mensaje.chat}}</span>
+                <a class="btn btn-default" href="<div data-gb-custom-block data-tag="url" data-0='responder_mensaje'></div>
+
+                    ">Responder</a>
 
            <p><a href={% url 'responder_mensaje' mensaje.id %}>Responder</a></p>
-            
+           <p><a href={% url 'eliminar_mensaje' mensaje.id %}>Eliminar</a></p>
 </p>
         {% endfor %}
 
