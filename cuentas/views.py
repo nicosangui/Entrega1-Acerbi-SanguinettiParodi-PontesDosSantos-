@@ -15,6 +15,7 @@ def mi_login(request):
         if formulario.is_valid():
             usuario = formulario.get_user()
             login(request, usuario)
+            extensionUsuario, es_nuevo = ExtensionUsuario.objects.get_or_create(user=request.user)
             return redirect('index')
     else:
         formulario = AuthenticationForm()
@@ -42,6 +43,7 @@ def editar_perfil(request):
     
     user = request.user
     
+    
     if request.method == 'POST':
         formulario = EditarPerfilFormulario(request.POST, request.FILES)
 
@@ -52,6 +54,7 @@ def editar_perfil(request):
             user.email = data_nueva['email']
             user.extensionusuario.avatar = data_nueva['avatar']
             
+        
             user.extensionusuario.save()
             user.save()
             return redirect('perfil')
