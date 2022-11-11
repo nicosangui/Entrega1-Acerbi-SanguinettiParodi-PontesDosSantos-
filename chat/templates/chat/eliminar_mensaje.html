@@ -1,0 +1,16 @@
+{% extends 'padres/base.html' %}
+
+{% block title_pagina %}
+<title>Eliminar mensaje</title>
+{% endblock title_pagina %}
+
+
+{% block mi_contenido %}
+<form action={% url 'eliminar_mensaje' chat.id %} method="POST">
+    {% csrf_token %}
+    <p>
+        ¿Desea eliminar este mensaje?
+    </p>
+    <button>Confirmar</button>
+</form>
+{% endblock mi_contenido %}

@@ -7,19 +7,19 @@
 
 {% block mi_contenido %}
 <p>Mensaje: </p>
-   <p>
-        {{mensaje.nombre}} 
-        {{mensaje.apellido}}.                                 
-        Fecha de creación: {{mensaje.fecha_de_creacion}}
-        <p><span span style="border-image: initial; border: 1px solid blue">{{mensaje.chat}}</span>
+   <p> 
+        {{chat.nombre}} 
+        {{chat.apellido}}.                                 
+        Fecha de creación: {{chat.fecha_de_creacion}}
+        <p><span span style="border-image: initial; border: 1px solid blue">{{chat.chat}}</span> 
         
-    {% comment %} <form action={% url 'responder_mensaje' mensaje.id %} method="POST">
+   {% comment %} <form action={% url 'responder_mensaje' chat.id %} method="POST">
             {% csrf_token %}
             <table>
                 {{form.media}}
                 {{form}}
             </table>
             <button>Editar</button> 
-    </form>        
-    </p> {% endcomment %}
+    </form>         {% endcomment %}
+    </p> 
 {% endblock mi_contenido %}

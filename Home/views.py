@@ -89,3 +89,4 @@ class EliminarJugador(LoginRequiredMixin, DeleteView):
     success_url = '/jugadores/'
     template_name = 'Home/eliminar_jugador.html'
     login_url = '/cuenta/login/'
+   
