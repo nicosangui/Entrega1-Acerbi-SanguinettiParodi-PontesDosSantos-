@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
+
 def index(request):
    return render(request, 'Home/index.html') 
 
@@ -26,7 +27,7 @@ def ver_jugadores(request):
     return render(request, 'Home/ver_jugadores.html', {'jugadores': jugadores, 'formulario':formulario})
     
     
-@login_required
+@login_required (login_url='/cuenta/login/')
 def crear_jugador(request):
     if request.method == 'POST':
         
@@ -61,13 +62,14 @@ def crear_jugador(request):
 def sobre_nosotros(request):
    return render(request, 'Home/sobre_nosotros.html')
 
-class VerJugador(DetailView):
+class VerJugador(LoginRequiredMixin, DetailView):
     model = Jugador
     template_name = 'Home/ver_jugador.html'
+    login_url = '/cuenta/login/'
     
 class Editarjugador(LoginRequiredMixin, UpdateView):
     model = Jugador
-    success_url = '/Home/jugadores/'
+    success_url = '/jugadores/'
     template_name = 'Home/editar_jugador.html'
     fields = ['nombre',
               'apellido',
@@ -80,8 +82,10 @@ class Editarjugador(LoginRequiredMixin, UpdateView):
               'altura',
               'peso'
             ]
+    login_url = '/cuenta/login/'
     
 class EliminarJugador(LoginRequiredMixin, DeleteView):
     model = Jugador
-    success_url = '/Home/jugador/'
+    success_url = '/jugadores/'
     template_name = 'Home/eliminar_jugador.html'
+    login_url = '/cuenta/login/'
