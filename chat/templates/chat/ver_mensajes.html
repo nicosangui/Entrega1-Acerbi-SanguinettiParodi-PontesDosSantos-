@@ -17,26 +17,11 @@
     {% if mensajes %}
  
         {% for mensaje in mensajes %}
-            <p>{{mensaje.nombre}}                                  
-            Fecha de creación: {{mensaje.fecha_de_creacion}}
+            <p>Usuario: {{mensaje.nombre}} </p>                                 
+            <p>Fecha de creación: {{mensaje.fecha_de_creacion}}</p>
             <p><span span style="border-image: initial; border: 3px solid black">{{mensaje.chat}}</span>
             
-                <hr>
-
-                <div data-gb-custom-block data-tag="for"></div>
-                
-                    <div class="comentario">
-                        <div class="date">{{ comentario.fecha_de_creacion }}</div>
-                        <strong>{{ comentario.nombre }}</strong>
-                        <p>{{ comentario.chat|linebreaks }}</p>
-                    </div>
-                
-                <div data-gb-custom-block data-tag="empty">
-                
-                    <p>Sin respuestas(</p>
-                
-                </div>    
-           <p><a href={% url 'responder_mensaje' mensaje.id %}>Responder</a></p>
+               
            <p><a href={% url 'eliminar_mensaje' mensaje.id %}>Eliminar</a></p>
 </p>
         {% endfor %}

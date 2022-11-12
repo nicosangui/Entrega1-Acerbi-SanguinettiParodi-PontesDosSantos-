@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from cuentas.forms import MiFormularioDeCreacion, EditarPerfilFormulario, MiCambioDePassword
 from django.contrib.auth.decorators import login_required
@@ -52,9 +52,8 @@ def editar_perfil(request):
             user.first_name = data_nueva['first_name']
             user.last_name = data_nueva['last_name']
             user.email = data_nueva['email']
-            user.extensionusuario.avatar = data_nueva['avatar']
-            
-        
+            user.extensionusuario.avatar = data_nueva['avatar']            
+            user.extensionusuario.link = data_nueva['link']
             user.extensionusuario.save()
             user.save()
             return redirect('perfil')
@@ -66,6 +65,7 @@ def editar_perfil(request):
                 'last_name': user.last_name,
                 'email': user.email,
                 'avatar': user.extensionusuario.avatar,
+                'link': user.extensionusuario.link,
             }
         )
     return render(request, 'cuentas/editar_perfil.html', {'formulario': formulario})

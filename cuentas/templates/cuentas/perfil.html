@@ -20,6 +20,13 @@
     <li>Nombre: {{request.user.first_name}}</li>
     <li>Apellido: {{request.user.last_name}}</li>
     <li>Email: {{request.user.email}}</li>
+    <li>
+        {% if request.user.extensionusuario.link %}
+        <a href="{{request.user.extensionusuario.link}}">Ir a pagina de usuario</a>
+        {% else %}
+        Link: No se ha cargado un link
+        {% endif %}
+    </li>
 </p>
 <p>
     <a href={% url 'editar_perfil' %}>Editar datos</a>

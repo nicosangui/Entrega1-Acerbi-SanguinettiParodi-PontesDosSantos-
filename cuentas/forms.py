@@ -23,7 +23,7 @@ class EditarPerfilFormulario(forms.Form):
     first_name = forms.CharField(label='Nombre')
     last_name = forms.CharField(label='Apellido')
     avatar = forms.ImageField(required=False)
-    
+    link = forms.URLField(required=False) 
 
 class MiCambioDePassword(PasswordChangeForm):
     old_password = forms.CharField(label='Contraseña vieja', widget=forms.PasswordInput) 

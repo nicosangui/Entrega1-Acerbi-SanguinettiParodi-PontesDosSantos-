@@ -1,6 +1,7 @@
 from django import forms
 
 class JugadorFormulario(forms.Form): 
+    imagen = forms.ImageField(required = False)
     nombre = forms.CharField(max_length=20)
     apellido = forms.CharField(max_length=20)
     nacionalidad = forms.CharField(max_length=20)

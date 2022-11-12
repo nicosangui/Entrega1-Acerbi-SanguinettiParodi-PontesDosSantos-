@@ -8,7 +8,12 @@
 
 {% block mi_contenido %}
 
-<p> 
+<p>         <li>{% if jugador.imagen %}
+            <img src={{jugador.imagen.url}} alt="">
+            {% else %}
+            Imagen no cargada
+            {% endif %}
+            </li>
             <li>Nombre: {{jugador.nombre}}</li>
             <li>Apellido: {{jugador.apellido}}</li>
             <li>Nacionalidad: {{jugador.nacionalidad}}</li>

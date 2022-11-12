@@ -1,12 +1,12 @@
 from datetime import datetime
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from chat.forms import ChatFormulario, Busquedamensaje, ResponderMensajeFormulario
+from chat.forms import ChatFormulario, Busquedamensaje
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import  DeleteView
 from chat.models import Chat
 
-@login_required
+@login_required (login_url='/cuenta/login/')
 def escribir_mensaje(request):
     if request.method == 'POST':
         
@@ -47,17 +47,4 @@ class EliminarMensaje(LoginRequiredMixin, DeleteView):
     model = Chat
     success_url = '/chat/mensajes/'
     template_name = 'chat/eliminar_mensaje.html'
-    
-def responder_mensaje(request, pk):
-    post = get_object_or_404(post, pk=pk)
-    if request.method == "POST":
-        form = ResponderMensajeFormulario(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.save()
-            return redirect('ver_mensajes', pk=post.pk)
-    else:
-        form = ResponderMensajeFormulario()
-    return render(request, 'responder_mensajes.html', {'form': form})
-
+    login_url = '/cuenta/login/'

@@ -6,7 +6,7 @@
  
 
 {% block mi_contenido %}
-<form action={% url 'crear_jugador' %} method="POST">
+<form action={% url 'crear_jugador' %} method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
     <table>
         {{formulario}}

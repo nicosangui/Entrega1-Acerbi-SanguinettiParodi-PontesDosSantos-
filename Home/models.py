@@ -4,6 +4,7 @@ from django.db import models
 
     
 class Jugador(models.Model):
+    imagen = models.ImageField(upload_to='images/',blank=True, null=True )
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=20)
     nacionalidad = models.CharField(max_length=20)

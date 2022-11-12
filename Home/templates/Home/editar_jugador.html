@@ -6,7 +6,7 @@
 
 
 {% block mi_contenido %}
-<form action={% url 'editar_jugador' jugador.id %} method="POST">
+<form action={% url 'editar_jugador' jugador.id %} method="POST"enctype='multipart/form-data'>
     {% csrf_token %}
     <table>
         {{form.media}}
