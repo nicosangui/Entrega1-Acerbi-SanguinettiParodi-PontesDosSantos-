@@ -2,6 +2,8 @@ Participantes: Acerbi, Pablo Damian
 Sanguinetti Parodi, Nicolas Hernan
 Pontes dos Santos, Gonzalo Nicolas
 
+Link a video explicativo: https://drive.google.com/file/d/1_wHUJLGgRJwQW7bY9Xn4bqzLD15fzSEU/view?usp=sharing
+
 1 - Levantar servicio.
 2 - Se accede a un Home
 3 - Ingresando en la pestaña Registrarse podremos crear un usuario que nos permita realizar modificaciones en la página.
